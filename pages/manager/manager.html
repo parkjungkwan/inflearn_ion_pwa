@@ -1,0 +1,19 @@
+
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>manager</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let menu of menus" (click)='gotoMenu(menu)'>
+      {{menu.title}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

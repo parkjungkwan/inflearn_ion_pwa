@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>newsModal</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-ony (click)='cancel()'>
+        <ion-icon name='close'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Title</ion-label>
+      <ion-input type="text" [(ngModel)]="news.title"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select [(ngModel)]="news.category">
+        <ion-option *ngFor="let category of categorys" [value]="category.title">
+          {{category.title}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Url</ion-label>
+      <ion-input type="text" [(ngModel)]="news.webUrl"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Source</ion-label>
+      <ion-input type="text" [(ngModel)]="news.source"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button full color='secondary' (click)="cancel()">취소</button>
+      </ion-col>
+      <ion-col>
+      <button ion-button full color='primary' (click)="save()">저장</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,26 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>user</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <div style='font-size:4vw;font-weight:BOLD;color:rgb(64, 28, 194)'>이름 : {{user.name}}</div>
+      <div style='font-size:3vw;font-weight:BOLD;color:rgb(108, 89, 177);margin-top:1vw'>등록일 : {{user.date}}</div>
+      <div style='font-size:2vw;font-weight:BOLD;color:rgb(233, 58, 102);margin-top:1vw'>이메일 : {{user.email}}</div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

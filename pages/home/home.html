@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>
+      News On
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- <ion-list>
+    <ion-item (click)='ckickNews(news)' *ngFor="let news of newses">
+      <div style='font-size:4vw;font-weight:BOLD;color:rgb(38, 21, 138);margin-bottom:1vw' text-wrap>{{news.title}}</div>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col>
+            <div style='font-size:3vw;color:rgb(73, 65, 121)'>{{news.category}}</div>
+          </ion-col>
+          <ion-col>
+            <div style='font-size:3vw;color:rgb(35, 151, 107)'>{{news.source}}</div>
+          </ion-col>
+          <ion-col>
+            <div style='font-size:3vw;color:rgb(107, 10, 26)'>{{news.date}}</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-badge item-end color='danger'>{{news.clickCount}}</ion-badge>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-list no-lines>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 col-md-4 col-xl-3 *ngFor="let news of newses">
+          <ion-item (click)='ckickNews(news)'>
+            <ion-row>
+              <ion-col>
+                <div style='width:100%' align='center'>test 1</div>
+              </ion-col>
+              <ion-col>
+                <div style='width:100%' align='center'>casw1</div>
+              </ion-col>
+              <ion-col>
+                <div style='width:100%' align='center'>allsd 1</div>
+              </ion-col>
+            </ion-row>
+            <!-- <ion-card>
+              <ion-card-header>
+                <div style='font-size:18px;font-weight:BOLD;color:rgb(38, 21, 138)' text-wrap>{{news.title}}</div>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <div style='font-size:13px;color:rgb(73, 65, 121)'>{{news.category}}</div>
+                    </ion-col>
+                    <ion-col>
+                      <div style='font-size:13px;color:rgb(35, 151, 107)'>{{news.source}}</div>
+                    </ion-col>
+                    <ion-col>
+                      <div style='font-size:13px;color:rgb(107, 10, 26)'>{{news.date}}</div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            
+            </ion-card> -->
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+
+<ion-footer *ngIf="masterSwitch">
+  <ion-navbar color='primary'>
+    <button ion-button full clear color='light' (click)="gotoManagerPage()">Manager</button>
+  </ion-navbar>
+</ion-footer>
